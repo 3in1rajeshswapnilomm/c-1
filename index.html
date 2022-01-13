@@ -1,0 +1,216 @@
+
+<style>
+.form{ 
+font-size:70%;
+background-color:aqua;
+width:300px;
+height:550px;
+font-family:  'Brush Script MT', cursive; 
+color:black;
+}
+div{
+ background-color:yellow;
+  width:300px;
+  text-align:center; 
+}
+#result{
+    color:black;
+}
+body{ 
+background-color:#ff8080;}
+.container{
+     background-color:yellow; 
+     border:2px solid #800000; display:block; 
+margin:auto;
+ width: 300px;
+
+}
+#r{ width: 300px; height: 30px; border: none; border-radius:#ffffffff 17px;#ff9c27b0 padding-left: 7px; color: black; } #button{ width: 300px; height: 30px; border: none; border-radius: 17px; padding-left: 7px; color: black; }
+h10{ font-family: 'Brush Script MT', cursive; }
+ h1{
+    font-family: 'Brush Script MT', cursive; 
+
+} 
+H2{ 
+font-family: 'Comforter Brush', cursive; 
+} 
+font{ 
+font-family: "Sofia",sans-serif;
+ }
+  h4{ 
+  font-family: "Sofia",sans-serif; 
+  
+  }
+#f{
+    background-color:white;
+    border: 2px solid #800000; 
+padding: 10px 20px; text-align: center; 
+text-decoration: none; 
+display: inline-block; 
+font-size: 14px; 
+margin: 30px 3px;
+border-radius:4px;
+}
+h2, 
+#numberText{
+     font-family:arial; text-align:center;
+
+}
+#numberText, #calculate, 
+label{ 
+font-family:arial;
+
+}
+.buttonDiv{
+     display: flex; 
+     justify-content: center;
+ align-items: center; 
+height: 100px;
+
+}
+#calculate{ 
+background-color: #ff4d4d;
+ color: black; 
+border: 2px solid #800000; 
+padding: 10px 20px; text-align: center; 
+text-decoration: none; 
+display: inline-block; 
+font-size: 14px; 
+margin: 4px 2px;
+
+}
+label{
+     margin-left: 20px; 
+     font-weight:bold;
+     
+     }
+</style><center>
+<div class="form" align="center">
+
+    <h1>Student Details</h1>
+  
+        <h4>Name:<input type="text" id="56" placeholder="Enter Username"><br><br>
+        Rollno:<input type="number" id="u" placeholder="Enter Enrollment no."><br><br>
+        Age:<input type="number" id="d"><br><br>
+        Gender: <input type="radio" name="gen">Male
+                <input type="radio" name="gen">Female
+                <input type="radio" name="gen">others<br><br>
+        Subject You want to take:<br><input type="checkbox">English
+                <input type="checkbox">Maths
+                <input type="checkbox">Hindi
+                <input type="checkbox">Physics
+                <input type="checkbox">Chemistry
+                <input type="checkbox">Biology<br><br>
+        Password:<input type="password" placeholder="Enter Password"><br><br>
+        BloodGroup: <select>
+                        <option>O</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>AB</option>
+                    </select><br><br>
+                </font><a href="https://youtube.com/shorts/V1IMMxUpu4Y?feature=share">hello ringtone</a>
+        <button id="r" onclick="pro()">Submit</button><br><br>
+               
+        <button id="r" onclick="myFun2()">ready to Upload</button><h5 id="stu"></h5></div><br>
+<div class="container">
+<h2>Square Root Calculator</h2>
+ <label for="number"> Enter a number: </label> 
+ <input type="number" id="number">
+<u><b><i> <p id="numberText"></p></u></b></i> 
+ <div class="buttonDiv">
+  <input type="Submit" id="calculate" value="Calculate" /> </div> <script id="rendered-js" >
+var number = document.getElementById("number");
+var result = document.getElementById("numberText");
+function convert(){
+     var sqRoot = Math.sqrt(number.value); result.innerHTML = sqRoot.toFixed(2);
+     
+     }
+function createEventListener(){
+     var calcBtn = document.getElementById("calculate"); if (calcBtn.addEventListener) { 
+     calcBtn.addEventListener("click", convert, false);
+      } 
+      else if (calcBtn.attachEvent) { 
+      calcBtn.attachEvent("onclick", convert); }
+      
+      }
+if (window.addEventListener){ 
+window.addEventListener("load", createEventListener, false);
+}
+else if (window.attachEvent){ 
+window.attachEvent("onload", createEventListener);
+
+} 
+</script></div>
+<form onsubmit="return false"> 
+<div class="form-group"> <div class="col-md-12"> <h1>My multiplication table generator</h1><input type="number" id="txtNumber" class="form-control" min="0" placeholder="Number times table. e.g: 9"><br><br> </div> </div> <div class="form-group"> <div class="col-md-12"> <input type="number" id="txtInterval" class="form-control" min="0" max="100" placeholder="Range. e.g: which number should stop"><br><br> <span class="text-danger small">
+</span> </div> 
+</div> 
+<div id="generate" class="form-group"> 
+<div class="col-md-12">
+ <input type="submit" id="btnGenerate" value="Generate Times Table"><br><br>
+  </div> 
+  </div> 
+  <div id="ans">
+  </div> 
+  </form> 
+  </section> 
+  </div>
+<script>var txtNumber = document.getElementById('txtNumber'), txtInterval = document.getElementById('txtInterval'), btnGenerate = document.getElementById('btnGenerate'), ans = document.getElementById('ans'); document.addEventListener('DOMContentLoaded', onFocus); btnGenerate.addEventListener('click', onClick); txtInterval.addEventListener('keydown', onKeyDown); txtNumber.addEventListener('keydown', onKeyDown); function onClick() { let count = 0; if (!validateNumber(txtNumber.value)) { while (count <= txtInterval.value) { ans.innerHTML += parseFloat(txtNumber.value) + ' X ' + count + ' = ' + (parseFloat(txtNumber.value) * count) + '<br>'; count++; } validateInterval(txtInterval.value); } return count; } function validateNumber(number) { let ret = false; if (number == '') ret = true; else if (number != '' && ans != '') ans.innerHTML = ''; return ret; } function validateInterval(interval) { let ret = false; if (interval > 10000000000000000000000099999999999999) { ans.innerHTML = ''; ret = true; } return ret; } function onKeyDown(e) { if (e.key === 'e') e.preventDefault(); } function onFocus() { txtNumber.focus(); }</script>
+   <div> 
+   <h1>My Calculator</h1> <br> 
+number:<br><input type="number" id="num1"><br>
+number2<br><input type="number" id="num2"><br><br> <div class="buttonDiv">
+ <button onclick="add()" id="calculate">My results</button><br><br></div>
+<u><b><i> <p id="result"></p></u></b></i></div>
+ <div id="dd">
+  <h1>My Square Calculator</h1> <br> 
+number:<br><input type="number" id="num"><br> <div class="buttonDiv">
+ <button onclick="ad()" id="calculate">My results</button><br><br></div><u><b><i><p id="resul"></p></div></u></b></i>
+ <button onClick="myFun()" id="r">upload</button>
+ </center>
+ <script>
+ function ad(){
+        var num =Number( document.getElementById("num").value);
+     
+var square = num*num;
+var div= num/num;
+document.getElementById("resul").innerHTML = num+ "×" +num+ "=" +square+ "<br>"; 
+ }
+ function add(){
+     var num1 =Number( document.getElementById("num1").value);
+      var num2=Number(document.getElementById("num2").value);
+
+var result = num1+num2;
+var Details = num1-num2;
+var square = num1*num2;
+var div= num1/num2;
+document.getElementById("result").innerHTML = num1+ "+" +num2+ "=" +result+ "<br>" +num1+ "-" +num2+ "=" +Details+ "<br>" +num1+ "×" +num2+ "=" +square+ "<br>" +num1+ "÷" +num2+ "=" +div;
+ }
+function pro(){
+let student = prompt("Please Enter Your Name","Swapnil");
+var g = Number( document.getElementById("d").value);
+var h = Number( document.getElementById("u#ffffd54f").value);
+document.getElementById("stu") .innerHTML = "hy " +student+ " of age " +g+ " roll no. is " +h+ ",<br>these are the calculator made for students including you";
+
+}
+function myFun() {
+
+prompt("Submited Successfully");
+}
+
+
+function myFun2() {
+
+
+let text = "Enter ok or Cancel";
+
+if(confirm(text) == true) {
+text = "You Confirmed";
+}
+else{
+text = "You Denied";
+
+}
+document.getElementById("stu").innerHTML = text;
+}
+</script>
